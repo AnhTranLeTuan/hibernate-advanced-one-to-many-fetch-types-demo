@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/one-to-many?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="connection.username">student</property>
+        <property name="connection.password">student</property>
+
+        <!-- JDBC connection pool settings  -->
+        <!-- Using built-in test pool -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- Select the specific dialect for MySQL -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo or send the SQL to stdout that will print out SQL queries Hibernate use behind the scenes -->
+        <!-- It is very useful for debugging and testing purposes -->
+        <property name="show_sql">true</property>
+
+		<!-- Set the current session context which is using the thread model in this situation -->
+		<property name="current_session_context_class">thread</property>
+ 
+    </session-factory>
+
+</hibernate-configuration>
